@@ -68,7 +68,7 @@ if st.sidebar.button("Generate Notes"):
         st.sidebar.markdown("❗ Please fill in all required fields to generate Notes")
 
 # Button to download questions as a DOCX file
-if st.sidebar.button("Generate All Questions as DOCX"):
+if st.sidebar.button("Generate Notes as DOCX"):
     if st.session_state.notes_gen:
         doc = docx.Document()
         doc.add_heading("Generated Notes", level=1)
@@ -80,7 +80,7 @@ if st.sidebar.button("Generate All Questions as DOCX"):
 
         # Offer the file for download
         st.download_button(
-            label="Download Generated Questions as DOCX",
+            label="Download Notes as DOCX",
             data=doc_io,
             file_name="generated_notes.docx",
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
